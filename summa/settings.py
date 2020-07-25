@@ -11,20 +11,19 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-from decouple import config, Csv
+#from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'kxtpznrz)v6-ed3yu+4ausg9!w$^x3tgoo9!)nfk^^)yiet0l!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = True
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=Csv())
-
+ALLOWED_HOSTS = []
 
 # Application definition
 
