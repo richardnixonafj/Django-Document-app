@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #my apps
     'summa.core',
+    'summa.pessoa',
 ]
 
 MIDDLEWARE = [

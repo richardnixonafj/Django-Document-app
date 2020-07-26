@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-sm-6">
+    <form action="." method="GET" class="form-inline">
+      <input type="text" id="search" name="search" class="form-control" placeholder="Busca">
+      <input type="submit" class="btn btn-primary" style="margin-left: 10px;" value="OK">
+    </form>
+  </div>
+</div>
+
+<div class="page-header">
+  <h2><i class="fa fa-user"></i> Pessoas</h2>
+
+        {% if object_list %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Concluida</th>
+                    <th>Inicio da Pesquisa</th>
+                    <th>Nome</th>
+                    <th>Profissao/Orgao</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for object in object_list %}
+                <tr>
+                  <td>{{ object.nome_do_filiado }}</td>
+                  <td>
+                    <a href="{{ object.get_absolute_url }}">{{ object.numero_da_incricao }}</a>
+                  </td>          
+                </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            <p class="alert alert-warning">Sem pesquisas cadastradas</p>
+        {% endif %}
+    </div>
+
+
+{% include "includes/pagination.html" %}
+
+{% endblock content %}
